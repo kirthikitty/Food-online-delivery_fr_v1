@@ -4,7 +4,7 @@ import '../Sign.js/login.css';
 export const Register = () => {
     const [formData, setFormData] = useState({
         firstName : '',
-        lastName : '',
+        lastName : '', 
         username : '',
         password : '',
     })

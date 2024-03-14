@@ -69,14 +69,14 @@ background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100
   max-width: 300px;
   margin: 0 auto;
 }
-
+/* 
 body {
   background: rgb(63,94,251);
   background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
+} */
 
 .welcome{
   text-align: center;
