@@ -1,0 +1,52 @@
+.navbar {
+    background-color: lightblue;
+    padding: 10px;
+  }
+  
+  .nav-link {
+    color: black !important;
+  }
+  
+  .nav-link[disabled] {
+    color: gray !important;
+  }
+  /* Navbar Styles */
+
+  .nav{
+    background: rgb(63,94,251);
+    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+    color: black;
+  }
+.Nav {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .Nav .Nav.Item {
+    margin-right: 10px; /* Adjust as needed */
+  }
+  
+  .Nav .Nav.Link {
+    color: #333; /* Adjust link color */
+    text-decoration: none;
+    padding: 8px 15px; /* Adjust padding as needed */
+    border-radius: 5px; /* Adjust border radius */
+    background-color: #f0f0f0; /* Adjust background color */
+    transition: background-color 0.3s ease; /* Smooth transition */
+  }
+  
+  .Nav .Nav.Link:hover {
+    background-color: #ccc; /* Adjust hover background color */
+  }
+  
+  .Nav .Nav.Link.active {
+    background-color: #007bff; /* Adjust active background color */
+    color: #fff; /* Adjust active text color */
+  }
+  
+  .Nav .Nav.Link.disabled {
+    pointer-events: none; /* Disable pointer events */
+    opacity: 0.5; /* Adjust disabled link opacity */
+  }
+  
+  

@@ -1,8 +1,9 @@
 import React, {useState} from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import '../Sign.js/login.css'
 
 export const Login = () => {
+  const {price} = useParams()
     const [formData, setFormData] = useState({
         username : '',
         password : '',
@@ -43,7 +44,7 @@ export const Login = () => {
       <div className='container'>
     {Array.isArray(formData) && formData.map((formData) =>(
         <div className='card' key={formData.id}>
-            <h1 className='welcome'>Welcome{formData.firstName}{formData.lastName}</h1>
+            {/* <h1 className='welcome'>Welcome{formData.firstName}{formData.lastName}</h1> */}
         </div>
     ))}
 </div>
@@ -61,8 +62,8 @@ export const Login = () => {
     <label>password</label>
     <input type="password" name="password" value={formData.password} onChange={handleChange}></input><br></br>
 
-    <button>Login</button>
-  <p className='message'><Link to ="/register">Create New Accout</Link></p>
+   <Link to={`/payment/${price}`}><button>Login</button></Link> 
+  <p className='message'><Link to ={`/register/${price}`}>Create New Accout</Link></p>
 </form>
     </div>
    

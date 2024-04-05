@@ -1,0 +1,50 @@
+/* Styles for the About Us page */
+
+/* Main container styles */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+  
+  /* Heading styles */
+  h1, h2 {
+    text-align: center;
+    color: #333;
+  }
+  
+  /* Paragraph styles */
+  p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+  
+  /* Team section styles */
+  .team-section {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  /* Team member styles */
+  .team-member {
+    flex: 1;
+    margin: 0 10px;
+  }
+  
+  /* Team member name styles */
+  .team-member h3 {
+    margin-bottom: 10px;
+  }
+  
+  /* Vision section styles */
+  .vision-section {
+    margin-top: 40px;
+  }
+  
+  /* Footer styles */
+  .footer {
+    text-align: center;
+    margin-top: 40px;
+    color: #777;
+  }
+  

@@ -1,7 +1,11 @@
 import React, {useState} from 'react'
 import '../Sign.js/login.css';
+import { useParams } from 'react-router';
+import { Link } from 'react-router-dom';
+import Navbar from '../components/Navbar.js';
 
 export const Register = () => {
+  const {price} = useParams()
     const [formData, setFormData] = useState({
         firstName : '',
         lastName : '', 
@@ -34,6 +38,14 @@ export const Register = () => {
           })
         }
   return (
+    <>
+      <div style={{ 
+      backgroundImage: "url('https://img.freepik.com/premium-photo/food-cooking-background-stone-texture-with-sea-salt-pepper-garlic-parsley-light-grey-abstract-food-background-empty-space-text-can-be-used-food-posters-design-menu-top-view_253362-16400.jpg?w=2000')",
+      backgroundPosition: 'center',
+      backgroundSize: 'cover', // This ensures the image covers the entire background
+      backgroundRepeat: 'no-repeat' // This ensures the image is not repeated
+    }}>  </div>
+    <Navbar />
 <div className='login-page'>
     <div className='form'>
       <div className='login'>
@@ -59,12 +71,13 @@ export const Register = () => {
     <label className=''>password</label>
     <input className='' type="password" name="password" value={formData.marks} onChange={handleChange}></input>
     </div>
-    <button className='message'>Submit</button>
+    <Link to='/login'><button className='message'>Submit</button></Link>
+    <Link to ={`/login/${price}`}>Already have an Accout?</Link>
 </form>
 </div>
 </div>
 
-              
+</>          
 
   );
 

@@ -1,0 +1,7 @@
+.card-body-hover {
+    transition: background-color 0.3s ease;
+  }
+  
+  .card-body-hover:hover {
+    background-color: #f8f9fa; /* Change this to the desired hover background color */
+  }

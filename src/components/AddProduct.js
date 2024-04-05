@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import Navbar from '../components/Navbar.js';
 
 export function AddProduct(){
 
@@ -25,7 +25,8 @@ export function AddProduct(){
     const[data1, setData] = useState({
         menuname: "",
         menudesc: "",
-        menuprice: ""
+        menuprice: "",
+        categoryname: ""
         
     });
     const dataGiven =  (e) => {
@@ -38,6 +39,7 @@ export function AddProduct(){
             menuname: data1.menuname,
             menudesc: data1.menudesc,
             menuprice: data1.menuprice,
+            categoryname: data1.categoryname,
             image : sendImage
         }
         console.log(AddProduct)
@@ -53,35 +55,60 @@ export function AddProduct(){
 
     }
     return (
-        <div>
+<div>
+  <Navbar />
+  <br></br>
+  <br></br>
+  
+<div className="fixed" style={{ fontFamily: 'Arial, sans-serif', maxWidth: '500px', margin: 'auto', backgroundColor: '#dc143c', padding: '30px', borderRadius: '20px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
+  <h1 style={{ textAlign: 'center', marginBottom: '20px', color: 'white' }}>Add a Product</h1>
 
-{selectedImage && (
-  <div>
-    <img
-      alt="not found"
-      width={"250px"}
-      src={URL.createObjectURL(selectedImage)}
-    />
-    <br />
-    <button onClick={() => setSelectedImage(null)}>Remove</button>
-    <button onClick={() => handleFile()}>Upload</button>
-  </div>
-)}
-           <h1>Add a Product</h1>
-           Name: <input type="text" name="menuname" value={data1.menuname} onChange={dataGiven} /> <br></br>
-           Description : <input type="text" name="menudesc" value={data1.menudesc} onChange={dataGiven} /> <br></br>
-           Price : <input type="text" name="menuprice" value={data1.menuprice} onChange={dataGiven} /> <br></br>
-           <input
-        type="file"
-        name="myImage"
-        onChange={(event) => {
-          console.log(event.target.files[0]);
-          setSelectedImage(event.target.files[0]);
-        }}
+  {selectedImage && (
+    <div style={{ textAlign: 'center', marginBottom: '20px' }}>
+      <img
+        alt="Selected Image"
+        style={{ maxWidth: '250px', marginBottom: '10px', borderRadius: '5px', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)' }}
+        src={URL.createObjectURL(selectedImage)}
       />
-           <input type="button" value="AddProduct" onClick={submitProduct} />
-        </div>
-    );
+      <br />
+      <button onClick={() => setSelectedImage(null)} style={{ marginRight: '10px', padding: '8px 16px', backgroundColor: '#FF6347', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer' }}>Remove Image</button>
+      <button onClick={() => handleFile()} style={{ padding: '8px 16px', backgroundColor: '#4CAF50', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer' }}>Upload Image</button>
+    </div>
+  )}
+
+  <form>
+    <div style={{ marginBottom: '20px' }}>
+      <label htmlFor="menuname" style={{ display: 'block', marginBottom: '5px', color: 'white' }}>Name:</label>
+      <input type="text" id="menuname" name="menuname" value={data1.menuname} onChange={dataGiven} style={{ width: '100%', padding: '8px', borderRadius: '5px', border: '1px solid #ccc', backgroundColor: '#fff' }} />
+    </div>
+
+    <div style={{ marginBottom: '20px' }}>
+      <label htmlFor="menudesc" style={{ display: 'block', marginBottom: '5px', color: 'white' }}>Description:</label>
+      <input type="text" id="menudesc" name="menudesc" value={data1.menudesc} onChange={dataGiven} style={{ width: '100%', padding: '8px', borderRadius: '5px', border: '1px solid #ccc', backgroundColor: '#fff' }} />
+    </div>
+
+    <div style={{ marginBottom: '20px' }}>
+      <label htmlFor="menuprice" style={{ display: 'block', marginBottom: '5px', color: 'white' }}>Price:</label>
+      <input type="text" id="menuprice" name="menuprice" value={data1.menuprice} onChange={dataGiven} style={{ width: '100%', padding: '8px', borderRadius: '5px', border: '1px solid #ccc', backgroundColor: '#fff' }} />
+    </div>
+
+    <div style={{ marginBottom: '20px' }}>
+      <label htmlFor="myImage" style={{ display: 'block', marginBottom: '5px', color: 'white' }}>Select Image:</label>
+      <input type="file" id="myImage" name="myImage" onChange={(event) => {
+        console.log(event.target.files[0]);
+        setSelectedImage(event.target.files[0]);
+      }} style={{ width: '100%', padding: '8px', borderRadius: '5px', border: '1px solid #ccc', backgroundColor: '#fff' }} />
+    </div>
+
+    <div style={{ textAlign: 'center' }}>
+      <input type="button" value="Add Product" onClick={submitProduct} style={{ padding: '10px 20px', backgroundColor: '#4CAF50', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer' }} />
+    </div>
+  </form>
+</div>
+</div>
+    )
+
+
 }
 
 export default AddProduct;
